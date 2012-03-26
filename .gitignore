@@ -1,0 +1,6 @@
+#Ignore PEAR folder
+PEAR/
+IOK archive/
+XLIFF_files/
+#Ignore file/pattern
+*.xml
