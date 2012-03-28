@@ -61,7 +61,7 @@ require_once 'HTTP\Request2.php';
 //at the # prompt
 
 require 'SolasAPI.class.php';
-require 'doStuffToXLIFF_file.php';
+require 'checkTM.php';
 
 $solasApi = new SolasAPI; // set up SolasAPI class for function calling
 
@@ -108,19 +108,29 @@ foreach ($solas_alljobs as $solas_alljob) {
 }
 
 //IOK create $data in XML format for test purposes
-			$xliffFile = "<methodCall>\r\n".
-					" <methodName>foo.bar</methodName>\r\n".
-					" <params>\r\n".
-					"  <param><value><string>Hello, locConnect!</string></value></param>\r\n".
-					"  <param><value><int>123</int></value></param>\r\n".
-					" </params>\r\n".
-					"</methodCall>";
+		$tmxFile = "<tmx version=\"1.4b\">\r\n".
+		 "<header creationtool=\"XYZTool\" creationtoolversion=\"1.01-023\"\r\n".
+		 " datatype=\"PlainText\" segtype=\"sentence\"\r\n".
+		 " adminlang=\"en-us\" srclang=\"en\"\r\n".
+		 " o-tmf=\"ABCTransMem\">\r\n".
+		 "</header>\r\n".
+		 "<body>\r\n".
+		 " <tu>\r\n".
+		 "  <tuv xml:lang=\"en\">\r\n".
+		 "	 <seg>Hello world!</seg>\r\n".
+		 "  </tuv>\r\n".
+		 "  <tuv xml:lang=\"fr\">\r\n".
+		 "   <seg>Bonjour le monde!</seg>\r\n".
+		 "  </tuv>\r\n".
+		 " </tu>\r\n".
+		 "</body>\r\n".
+		 "</tmx>";
 					
-	echo '<br> $xliffFile: '.$xliffFile; //IOK for testing
+//	echo '<br> $tmxFile: '.$tmxFile; //IOK for testing
 
 	//Do stuff to the XLIFF file
-	$updatedXliffFile = doStuffToXLIFF($xliffFile);
-	echo '<br> $updatedXliffFile: '.$updatedXliffFile; //IOK for testing
+	$results = checkTM_TMX($tmxFile);
+	echo '<br> $results: '.$results; //IOK for testing
 	
 	
 //Get job if jobId is set

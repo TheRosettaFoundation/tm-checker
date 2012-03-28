@@ -1,7 +1,7 @@
 <?php
 
 /*
-Creation Date: 21 March 2012
+Creation Date: 27 March 2012
 Author: Ian O'Keeffe
 
 Modification History:
@@ -15,11 +15,11 @@ It uploads a file for processing manually, rather than using locConnect, for tes
 
 $option=$_POST['select'];
 
-require 'doStuffToXLIFF_file.php';
+require 'checkTM.php';
 
 echo $option;
 
-$allowed_filetypes = array('.xml', '.xlf', '.txt'); // These will be the types of file that will pass the validation.	  
+$allowed_filetypes = array('.xml', '.xlf', '.txt', '.tmx'); // These will be the types of file that will pass the validation.	  
 $max_filesize = 10485760; // Maximum filesize in BYTES (this is equivalent to 10 MB in bytes)
 $upload_path = 'c:\uploads\\'; // The place the files will be uploaded to. second \ in path is because of escape character issues for windows
 $filename = $_FILES['userfile']['name']; // Get the name of the file (including file extension).
@@ -56,16 +56,23 @@ copy ($_FILES['userfile']['tmp_name'], $upload_path.$_FILES['userfile']['name'])
 echo '<br>Content of '.$filename.' :<br><hr />'.$fileContent.'<br><hr />'; //IOK for testing
 
 
+if($ext == '.xlf') {
+	//Do stuff to the XLIFF file
 
-//Do stuff to the XLIFF file
-$updatedXliffFile = doStuffToXLIFF($fileContent);
-echo '<br><br>Content of $updatedXliffFile: <br><hr />'.$updatedXliffFile.'<br><hr />'; //IOK for testing
+}
+if($ext == '.tmx') {
+	//Check TMX file
+	$results = checkTM_TMX($fileContent);
+}
+
+	
+	echo '<br><br>Results: <br><hr />'.$results.'<br><hr />'; //IOK for testing
 
 
 
-//create a new file in c:\uploads\... with the name 'u_'.filename to mark it as updated
-	$fp      = fopen($upload_path.'u_'.$filename, 'w'); //open this local c:\uploads\... file
-	$fileContent = fwrite($fp, $updatedXliffFile); // write the updated XLIFF
+//create a new file in c:\uploads\... with the name 'TM_Results_'.filename
+	$fp      = fopen($upload_path.'TM_Results_'.$filename, 'w'); //open this local c:\uploads\... file
+	$fileContent = fwrite($fp, $results); // write the results to the new file
 	fclose($fp);
 
 
