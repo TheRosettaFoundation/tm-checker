@@ -153,6 +153,28 @@ $results = 'Number of entries: '.$totalCount.' <br> Duplicate entries: '.$duplic
 return $results;
 }
 
+//This function will be for handling tab-delimited text files...
+/*
+function checkTM_TXT($file){
+$a = file_get_contents($file);
+
+$a = str_replace( array( "\r\n" , "\t" ) , array( "[NEW*LINE]" , "[tAbul*Ator]" ) , $a );
+
+print "<table border=\"1\">";
+foreach( explode( "[NEW*LINE]" , $a ) AS $lines ) {
+    print "<tr>";
+    foreach( explode( "[tAbul*Ator]" , $lines ) AS $li ) {
+        print "<td>";
+        print $li ;
+        print "</td>";
+    }
+
+    print "</tr>";
+}
+print "</table>";
+} 
+*/
+
 
 /*
 Example XLIFF file
