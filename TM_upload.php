@@ -53,7 +53,7 @@ copy ($_FILES['userfile']['tmp_name'], $upload_path.$_FILES['userfile']['name'])
 	$fileContent = fread($fp, filesize($upload_path.$filename)); // read this file into the $fileContent variable. You may wish to simply upload the file into this variable rather than saving it locally
 	fclose($fp);
 
-echo '<br>Content of '.$filename.' :<br><hr />'.$fileContent.'<br><hr />'; //IOK for testing
+//echo '<br>Content of '.$filename.' :<br><hr />'.$fileContent.'<br><hr />'; //IOK for testing
 
 
 if($ext == '.xlf') {
