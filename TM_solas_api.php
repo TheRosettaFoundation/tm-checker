@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Solas API Glossary Checker Page</title>
+<title>Solas API TM Checker Page</title>
 <!--
 Creation Date: 21 February 2012
 Author: Ian O'Keeffe
@@ -37,7 +37,7 @@ It performs the following:
 </head>
 <body>
 <br>
-<b>Glossary Checker API page is being called at:  </b>
+<b>TM Checker API page is being called at:  </b>
 
 
 <?php
@@ -111,18 +111,90 @@ foreach ($solas_alljobs as $solas_alljob) {
 		$tmxFile = "<tmx version=\"1.4b\">\r\n".
 		 "<header creationtool=\"XYZTool\" creationtoolversion=\"1.01-023\"\r\n".
 		 " datatype=\"PlainText\" segtype=\"sentence\"\r\n".
-		 " adminlang=\"en-us\" srclang=\"en\"\r\n".
+		 " adminlang=\"EN-US\" srclang=\"EN-US\"\r\n".
 		 " o-tmf=\"ABCTransMem\">\r\n".
 		 "</header>\r\n".
 		 "<body>\r\n".
 		 " <tu>\r\n".
-		 "  <tuv xml:lang=\"en\">\r\n".
-		 "	 <seg>Hello world!</seg>\r\n".
+		 "  <tuv lang=\"EN-US\">\r\n".
+		 "	 <seg>Fart.</seg>\r\n".
 		 "  </tuv>\r\n".
-		 "  <tuv xml:lang=\"fr\">\r\n".
-		 "   <seg>Bonjour le monde!</seg>\r\n".
+		 "  <tuv lang=\"DE-DE\">\r\n".
+		 "   <seg>Farten.</seg>\r\n".
 		 "  </tuv>\r\n".
 		 " </tu>\r\n".
+		 " <tu>\r\n".
+		 "  <tuv lang=\"EN-US\">\r\n".
+		 "	 <seg>Sneeze.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 "  <tuv lang=\"DE-DE\">\r\n".
+		 "   <seg>Bigennosenblowenoffen.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 " </tu>\r\n".		 
+		 " <tu>\r\n".
+		 "  <tuv lang=\"EN-US\">\r\n".
+		 "	 <seg>Burp.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 "  <tuv lang=\"DE-DE\">\r\n".
+		 "   <seg>Burpen.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 " </tu>\r\n".		 
+		 " <tu>\r\n".
+		 "  <tuv lang=\"EN-US\">\r\n".
+		 "	 <seg>Belch.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 "  <tuv lang=\"DE-DE\">\r\n".
+		 "   <seg>Burpen.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 " </tu>\r\n".		 
+		 " <tu>\r\n".
+		 "  <tuv lang=\"EN-US\">\r\n".
+		 "	 <seg>Fart.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 "  <tuv lang=\"DE-DE\">\r\n".
+		 "   <seg>Stinkenbum.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 " </tu>\r\n".		 
+		 " <tu>\r\n".
+		 "  <tuv lang=\"EN-US\">\r\n".
+		 "	 <seg>Fart.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 "  <tuv lang=\"DE-DE\">\r\n".
+		 "   <seg>Farten.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 " </tu>\r\n".		 
+		 " <tu>\r\n".
+		 "  <tuv lang=\"EN-US\">\r\n".
+		 "	 <seg>Cough.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 "  <tuv lang=\"DE-DE\">\r\n".
+		 "   <seg>Coffen.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 " </tu>\r\n".		 
+		 " <tu>\r\n".
+		 "  <tuv lang=\"EN-US\">\r\n".
+		 "	 <seg>Cough.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 "  <tuv lang=\"DE-DE\">\r\n".
+		 "   <seg>Coffen.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 " </tu>\r\n".		 
+		 " <tu>\r\n".
+		 "  <tuv lang=\"EN-US\">\r\n".
+		 "	 <seg>Belch.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 "  <tuv lang=\"DE-DE\">\r\n".
+		 "   <seg>Burpen.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 " </tu>\r\n".			 
+		 " <tu>\r\n".
+		 "  <tuv lang=\"EN-US\">\r\n".
+		 "	 <seg>Belch.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 "  <tuv lang=\"DE-DE\">\r\n".
+		 "   <seg>Belchen.</seg>\r\n".
+		 "  </tuv>\r\n".
+		 " </tu>\r\n".		 
 		 "</body>\r\n".
 		 "</tmx>";
 					
@@ -130,7 +202,7 @@ foreach ($solas_alljobs as $solas_alljob) {
 
 	//Do stuff to the XLIFF file
 	$results = checkTM_TMX($tmxFile);
-	echo '<br> $results: '.$results; //IOK for testing
+	echo '<br><br><br><h2> Results: </h2>'.$results; //IOK for testing
 	
 	
 //Get job if jobId is set

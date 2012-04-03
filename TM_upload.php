@@ -24,7 +24,8 @@ $max_filesize = 10485760; // Maximum filesize in BYTES (this is equivalent to 10
 $upload_path = 'c:\uploads\\'; // The place the files will be uploaded to. second \ in path is because of escape character issues for windows
 $filename = $_FILES['userfile']['name']; // Get the name of the file (including file extension).
 
-echo '<h2>Solas Glossary Checker Component - Processing file selected manually</h2><br>';
+echo '<img src="header_Solas2s.JPG" /><hr />';
+echo '<h2>Solas TM Checker Component - Processing file selected manually</h2><br>';
 echo '<hr /><br><h3>File to be processed: '.$filename.'</h3>';
 
 
@@ -68,7 +69,7 @@ if($ext == '.tmx') {
 	
 	echo '<br><br>Results: <br><hr />'.$results.'<br><hr />'; //IOK for testing
 
-
+	echo '<img src="footer_CNGL_LRC.JPG" />';
 
 //create a new file in c:\uploads\... with the name 'TM_Results_'.filename
 	$fp      = fopen($upload_path.'TM_Results_'.$filename, 'w'); //open this local c:\uploads\... file

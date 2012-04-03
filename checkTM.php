@@ -96,11 +96,17 @@ $totalCount = $i;
 
 //Step 2: Look for duplicate entries
 $duplicateCount = 0;
+echo '<br><br><br><br> Duplicate entries -------------------------------------------------------------><br><br>';
+
 for($i = 1; isset($TM_array[$i][0]); $i++) {
 	if($TM_array[$i][5] == $TM_array[$i][6]) { //matching source and target
 		if($TM_array[$i][0] != $TM_array[$i][5]) { //seq. != source and target, so must be a duplicate	
 			$TM_array[$i][7] = $TM_array[$i][5]; //duplicate. place original seq. no of pair in [7]
 			$duplicateCount++;
+
+			$orig = $TM_array[$i][5]; // seq no of original entry
+			echo '<br><br>'.$TM_array[$i][0].'  '.$TM_array[$i][1].'  <b>'.$TM_array[$i][2].'</b>  '.$TM_array[$i][3].'  <b>'.$TM_array[$i][4].'</b> <br> ==> Original entry:<br>'.$TM_array[$orig][0].'  '.$TM_array[$orig][1].'  <b>'.$TM_array[$orig][2].'</b>  '.$TM_array[$orig][3].'  <b>'.$TM_array[$orig][4].'</b>';
+
 		}
 	}
 }
