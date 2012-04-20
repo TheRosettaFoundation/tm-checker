@@ -150,7 +150,7 @@ for($i = 1; isset($TM_array[$i][0]); $i++) {
 
 
 
-$results = 'Number of entries: '.$totalCount.' <br> Duplicate entries: '.$duplicateCount.' <br> Cat 2 inconsistency total: '.$cat2Count.' <br> Cat 3 inconsistency total: '.$cat3Count;
+$results = 'File type: TMX <br> Number of entries: '.$totalCount.' <br> Duplicate entries: '.$duplicateCount.' <br> Cat 2 inconsistency total: '.$cat2Count.' <br> Cat 3 inconsistency total: '.$cat3Count;
 
 
 
@@ -301,7 +301,7 @@ for($i = 1; isset($TM_array[$i][0]); $i++) {
 
 
 
-$results = 'Number of entries: '.$totalCount.' <br> Duplicate entries: '.$duplicateCount.' <br> Cat 2 inconsistency total: '.$cat2Count.' <br> Cat 3 inconsistency total: '.$cat3Count;
+$results = 'File type: XLIFF <br> Number of entries: '.$totalCount.' <br> Duplicate entries: '.$duplicateCount.' <br> Cat 2 inconsistency total: '.$cat2Count.' <br> Cat 3 inconsistency total: '.$cat3Count;
 
 
 
