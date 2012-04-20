@@ -62,9 +62,10 @@ if($ext == '.xlf') {
 	$results = checkTM_XLIFF($fileContent);
 
 }
-if($ext == '.tmx') {
-	//Check TMX file
-	$results = checkTM_TMX($fileContent);
+
+if($ext == '.txt') {
+	//Check TXT file
+	$results = checkTM_TXT($fileContent);
 }
 
 	
