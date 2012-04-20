@@ -58,7 +58,8 @@ copy ($_FILES['userfile']['tmp_name'], $upload_path.$_FILES['userfile']['name'])
 
 
 if($ext == '.xlf') {
-	//Do stuff to the XLIFF file
+	//Check XLIFF file
+	$results = checkTM_XLIFF($fileContent);
 
 }
 if($ext == '.tmx') {
