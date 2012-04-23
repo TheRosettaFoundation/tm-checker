@@ -68,6 +68,11 @@ if($ext == '.txt') {
 	$results = checkTM_TXT($fileContent);
 }
 
+if($ext == '.tmx') {
+	//Check TMX file
+	$results = checkTM_TMX($fileContent);
+}
+
 	
 	echo '<br><br>Results: <br><hr />'.$results.'<br><hr />'; //IOK for testing
 
