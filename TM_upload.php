@@ -13,11 +13,11 @@ It uploads a file for processing manually, rather than using locConnect, for tes
 */
 
 
-$option=$_POST['select'];
+//$option=$_POST['select'];
 
 require 'checkTM.php';
 
-echo $option;
+//echo $option;
 
 $allowed_filetypes = array('.xml', '.xlf', '.txt', '.tmx'); // These will be the types of file that will pass the validation.	  
 $max_filesize = 10485760; // Maximum filesize in BYTES (this is equivalent to 10 MB in bytes)

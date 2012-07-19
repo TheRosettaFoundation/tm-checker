@@ -11,6 +11,15 @@ Creation
 
 This collection is for creating a Glossary Checker component to interact with the locConnect server in the Solas architecture.
 
+Demo files to be used when browsing for file: SolasC_TM_Checker/XLIFF_files/000_tabDelimitedGlossary_en_de.txt
+SolasC_TM_Checker/XLIFF_files/000_TMX_example_en_fr.tmx
+SolasC_TM_Checker/XLIFF_files/000_XLIFF_example_en_fr.xlf
+
+Note: A folder is required at root level called uploads:
+C:\uploads
+
+Either create this, or the first file write will do so. If you get a chmod 777 error, you will have to create the folder manually and set the correct write permissions.
+
 Contents:
 ---------
 index.html
